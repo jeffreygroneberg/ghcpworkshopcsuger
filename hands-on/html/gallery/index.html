@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      window.onload = function() {
+        // Get all images in the gallery
+        const images = document.querySelectorAll('.gallery img');
+
+        // Add a click event listener to each image
+        images.forEach(function(image) {
+          image.addEventListener('click', function() {
+            // Toggle the flip class on the clicked image
+           window.alert('You clicked on an image');
+          });
+        });
+      };
+    </script>
+    <style>
+
+      /* Add your CSS here */
+      @keyframes wobble {
+        0% { transform: rotate(0); }
+        50% { transform: rotate(3deg); }
+        100% { transform: rotate(-3deg); } 
+      }
+
+      /* polaroid stlye of images been in a 3 columns layout. With no padding in betwwwen */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+
+        /* center the gallery */
+        margin: 0 auto;
+        width: 600px;
+
+      }
+
+      /* add a wobble effect when hovering the mouse */
+      .gallery img:hover {
+        transform: scale(1.2);
+        animation: wobble 2s linear infinite alternate;
+        transition: transform 0.5s;              
+      }
+      
+      .gallery img {
+        margin: 10px;
+        border: 1px solid #ccc;
+        padding: 5px;
+        width: 200px;
+        height: 200px;
+        transition: opacity 0.5s,  transform 0.5s;        
+        opacity: 1;        
+      }
+
+      /* reduce the opacity of all non-hovered images to 0.6 when one is hovered over */
+      .gallery:hover img:not(:hover) {
+        opacity: 0.6;
+        transition: opacity 0.5s;
+      }
+
+      body::after {
+        content: "";
+        background: rgba(0, 0, 0, 0);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: background-color 0.5s;
+        z-index: -1;
+      }
+
+      .gallery img:hover ~ body::after {
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Add an image gallery that relfects images looking like polaroid. Use random images as src property -->    
+    <div class="gallery">
+      <img src="https://source.unsplash.com/random/200x200" alt="random image" />
+      <img src="https://source.unsplash.com/random/200x200" alt="random image" />
+      <img src="https://source.unsplash.com/random/200x200" alt="random image" />
+      <img src="https://source.unsplash.com/random/200x200" alt="random image" />
+      <img src="https://source.unsplash.com/random/200x200" alt="random image" />
+      <img src="https://source.unsplash.com/random/200x200" alt="random image" />
+      <img src="https://source.unsplash.com/random/200x200" alt="random image" />
+      <img src="https://source.unsplash.com/random/200x200" alt="random image" />
+      <img src="https://source.unsplash.com/random/200x200" alt="random image" />
+  </body>
+</html>
