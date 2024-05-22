@@ -5,9 +5,7 @@ This exercise will help you create a simple image gallery with animations using 
 
 ## 🎯 Goal
 <!-- ONE SENTENCE ABOUT THE GOAL OF THE EXERCISE -->
-Create a simple calculator using JavaScript.
-
-The gallery should look and behave like the following example:
+The image gallery should look and behave like the following example:
 
 ![Example](./images/wobble.gif)
 
