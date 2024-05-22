@@ -3,7 +3,7 @@
 <!-- REPLACE THE TITLE WITH THE NAME OF THE EXERCISE -->
 
 This repository includes a Github Copilot training intended to show off a very practical example using the tool.
-We will leverage the Java programming language to query the Star Wars API at https:://swapi.info and retrieve information about the Star Wars characters.
+We will leverage the Java programming language to query the Star Wars API at https://swapi.info and retrieve information about the Star Wars characters.
 Within this training we will try to cover the whole lifecycle of a Java application. Starting from creating a Maven based Java project, writing tests, implementing the application, and running the tests. Even a small refactoring will be covered.
 
 ## 🎯 Goal
