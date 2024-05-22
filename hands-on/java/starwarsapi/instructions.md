@@ -561,3 +561,309 @@ We will now implement the `getLukeSkywalker` method in the `StarWarsAPIImpl` cla
 > - ``// Parse the response body to a StarWarsCharacterDTO object``
 > - ``// Return the StarWarsCharacterDTO object``
 
+### Solution
+
+Your `StarWarsAPIImpl.java` file should look like this:
+
+```java
+package com.mycompany.app;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient; // Import the HttpClient class
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
+public class StarWarsAPIImpl implements StarWarsAPI{
+
+    @Override
+    public StarWarsCharacterDTO getLukeSkywalker() throws IOException {
+       
+        // Use Java HttpClient to make a GET request to the Star Wars API
+        // The URL to get Luke Skywalker is https://swapi.info/api/people/1
+        // Create a new instance of HttpClient
+        HttpClient client = HttpClient.newHttpClient();
+
+        // Create a new instance of HttpRequest
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create("https://swapi.info/api/people/1"))
+            .build();
+
+        // Send the request and get the response
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        // Parse the response JSON into a StarWarsCharacterDTO object
+        ObjectMapper mapper = new ObjectMapper();
+        StarWarsCharacterDTO lukeSkywalker = mapper.readValue(response.body(), StarWarsCharacterDTO.class);
+
+        return lukeSkywalker;
+        
+
+    }      
+    
+}
+```
+
+You will see that there is an **error** with the `ObjectMapper` class. We will fix this in the next steps.
+
+## Fixing the ObjectMapper error
+
+The `ObjectMapper` class is not yet imported. But even then we need to add the `jackson-databind` dependency to the `pom.xml` file. Use the Github Copilot to help with this.
+
+> [!IMPORTANT]
+> - Use Github Copilot to generate the import in your `StarWarsAPIImpl.java` file to ``import com.fasterxml.jackson.databind.ObjectMapper;``
+> - Use Github Copilot to generate the dependency in your `pom.xml` file to ``com.fasterxml.jackson.core:jackson-databind:2.13.0``
+
+> [!TIP]
+> - Use Github Copilot ``/fix`` command to fix the error in the `StarWarsAPIImpl.java` file. You can also use the right click menu to fix the error.
+> - Ask Github Copilot Chat to provide you with the necessary dependency for the `pom.xml` file. A prompt could be: ``I need to add the jackson-databind dependency to the pom.xml file. Can you help me with this?``
+> A popup from the Java Extension Pack will appear. Accept the suggestion to rebuild the Java Class Path.
+
+
+### Solution
+
+Your `StarWarsAPIImpl.java` file should look like this:
+
+```java
+package com.mycompany.app;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient; // Import the HttpClient class
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class StarWarsAPIImpl implements StarWarsAPI{
+
+    @Override
+    public StarWarsCharacterDTO getLukeSkywalker() throws IOException {
+       
+        // Use Java HttpClient to make a GET request to the Star Wars API
+        // The URL to get Luke Skywalker is https://swapi.info/api/people/1
+
+        // Create a new instance of HttpClient
+        HttpClient client = HttpClient.newHttpClient();
+
+        // Create a new instance of HttpRequest
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create("https://swapi.info/api/people/1"))
+            .build();
+
+        // Send the request and get the response
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        // Parse the response JSON into a StarWarsCharacterDTO object
+        ObjectMapper mapper = new ObjectMapper();
+        StarWarsCharacterDTO lukeSkywalker = mapper.readValue(response.body(), StarWarsCharacterDTO.class);
+
+        return lukeSkywalker;
+        
+
+    }      
+    
+}
+```
+
+Your `pom.xml` file should look like this:
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>my-app</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- Add this block for jackson-databind -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.13.0</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+Nevertheless there is now a new error in the `StarWarsAPIImpl.java` file. We will fix this in the next steps.
+
+## Fixing the InterruptedException error
+
+The `getLukeSkywalker` method throws an `IOException`. But the `HttpClient` class also throws an `InterruptedException`. We will fix this by adding the `InterruptedException` to the `throws` clause of the method. This also means that we need to add the `InterruptedException` to the `throws` clause of the `getLukeSkywalker` method in the `StarWarsAPI` interface. And afterwards to the **try/catch** block in the `StarWarsAPITest.java` file.
+
+> [!IMPORTANT]
+> Use the Quick Fix menu (`CMD+.`) to add the `InterruptedException` to the `throws` clause of the `getLukeSkywalker` method.
+> ![image](images/5.png)
+> Use the Quick Fix menu (`CMD+.`) to add the `InterruptedException` to the `throws` clause of the `getLukeSkywalker` method in the `StarWarsAPI` interface.
+> ![image](images/6.png)
+> Use the Quick Fix menu (`CMD+.`) to add the `InterruptedException` to the `try/catch` block in the `StarWarsAPITest.java` file.
+> ![image](images/7.png)
+
+### Solution
+
+Your `StarWarsAPIImpl.java` file should look like this:
+
+```java
+package com.mycompany.app;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient; // Import the HttpClient class
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class StarWarsAPIImpl implements StarWarsAPI{
+
+    @Override
+    public StarWarsCharacterDTO getLukeSkywalker() throws IOException, InterruptedException {
+       
+        // Use Java HttpClient to make a GET request to the Star Wars API
+        // The URL to get Luke Skywalker is https://swapi.info/api/people/1
+
+        // Create a new instance of HttpClient
+        HttpClient client = HttpClient.newHttpClient();
+
+        // Create a new instance of HttpRequest
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create("https://swapi.info/api/people/1"))
+            .build();
+
+        // Send the request and get the response
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        // Parse the response JSON into a StarWarsCharacterDTO object
+        ObjectMapper mapper = new ObjectMapper();
+        StarWarsCharacterDTO lukeSkywalker = mapper.readValue(response.body(), StarWarsCharacterDTO.class);
+
+        return lukeSkywalker;
+        
+
+    }      
+    
+}
+```
+
+Your `StarWarsAPI.java` file should look like this:
+
+```java
+package com.mycompany.app;
+
+import java.io.IOException;
+
+public interface StarWarsAPI {
+
+    StarWarsCharacterDTO getLukeSkywalker() throws IOException, InterruptedException;
+
+}
+```
+
+Your `StarWarsAPITest.java` file should look like this:
+
+```java
+package com.mycompany.app;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+
+public class StarWarsAPITest {
+
+    @Test
+    public void testGetLukeSkywalker() {
+
+        StarWarsAPI starWarsAPI = new StarWarsAPIImpl();
+        try {
+            StarWarsCharacterDTO lukeSkywalker = starWarsAPI.getLukeSkywalker();
+            assertNotNull(lukeSkywalker);
+        } catch (IOException | InterruptedException e) {
+            fail("IOException occurred: " + e.getMessage());
+        }
+    }
+}
+
+```
+
+## Run the tests
+
+Run the tests again to make sure everything is working as expected. **The tests will now fail** with
+
+```plaintext
+[ERROR] Failures: 
+[ERROR]    StarWarsAPITest.testGetLukeSkywalker:20 IOException occurred: No content to map due to end-of-input
+ at [Source: (String)""; line: 1, column: 0]
+```
+
+> [!IMPORTANT]
+> - Ask Github Copilot to provide you with the necessary code to fix the error. The hint might be not enough. 
+> - Go in your browser. Open the network tab in the developer tools. And visit the url `https://swapi.info/api/people/1`. Look at the network and use this info to fix the error. 
+
+> [!TIP]
+> - Open the `StarWarsAPIImpl.java` file. Go in Github Copilot chat and ask for help to fix the error: ``When visiting the url https://swapi.info/api/people/1 I see in my network tab of the dev consoles in my browser a 308. Does this lead to an error in my test?``
+> Replace the instance of the `HttpClient` with the following code: ``HttpClient client = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.ALWAYS).build();``
+> Rerun the tests to make sure everything is working as expected: ``mvn test``
+>
+
+### Solution
+
+Your `StarWarsAPIImpl.java` file should look like this:
+
+```java
+package com.mycompany.app;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient; // Import the HttpClient class
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class StarWarsAPIImpl implements StarWarsAPI{
+
+    @Override
+    public StarWarsCharacterDTO getLukeSkywalker() throws IOException, InterruptedException {
+       
+        // Use Java HttpClient to make a GET request to the Star Wars API
+        // The URL to get Luke Skywalker is https://swapi.info/api/people/1
+
+        // Create a new instance of HttpClient
+        HttpClient client = HttpClient.newBuilder()
+            .followRedirects(HttpClient.Redirect.ALWAYS)
+            .build();
+
+        // Create a new instance of HttpRequest
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create("https://swapi.info/api/people/1"))
+            .build();
+
+        // Send the request and get the response
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        // Parse the response JSON into a StarWarsCharacterDTO object
+        ObjectMapper mapper = new ObjectMapper();
+        StarWarsCharacterDTO lukeSkywalker = mapper.readValue(response.body(), StarWarsCharacterDTO.class);
+
+        return lukeSkywalker;
+        
+
+    }      
+    
+}
+```
+
+
+
+
+ 
+
