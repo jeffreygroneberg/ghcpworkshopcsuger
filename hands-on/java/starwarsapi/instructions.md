@@ -62,7 +62,7 @@ Remember hat you can directly copy commands from the chat and paste them into th
 Create an empty folder and navigate to it via terminal. Then run the following command:
 
 ```bash
-mvn archetype:generate -DgroupId=com.starwars -DartifactId=starwars -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
 ## Check if the tests compile
@@ -1098,3 +1098,71 @@ public class StarWarsAPITest {
 }
 
 ```
+
+## Refactor the StarWarsAPI implementation
+
+There is a lot of duplicated code in the `getLukeSkywalker` and `getDarthVader` methods. We will refactor the code to extract the common code into a new private method called `getStarWarsCharacter` and leverage Github Copilot to help us with this.
+
+> [!IMPORTANT]
+> Use the Github Copilot chat to help you refactor the `getLukeSkywalker` and `getDarthVader` methods in the `StarWarsAPIImpl` class. The common code should be extracted into a new private method called `getStarWarsCharacter`. The method should only receive an id as a parameter and return a `StarWarsCharacterDTO` object.
+
+> [!TIP]
+> - Open your `StarWarsAPIImpl.java` file.
+> - Use Github Copilot chat to help you refactor the `getLukeSkywalker` and `getDarthVader` methods. Use the following prompt: ``Can you help me refactoring this class to use a private method getStarWarsCharacter to retrieve the payloads and avoid duplicated code in the different methods. I want to provide an Id to the private method. I need the whole refactored class as a result including the getLukeSkywalker and getDarthVaeder methods.``
+> - Careful. The retrieved class is missing the package declaration. **Add the package declaration to the class**
+
+### Solution
+
+Your `StarWarsAPIImpl.java` file should look like this:
+
+```java
+package com.mycompany.app;
+
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class StarWarsAPIImpl implements StarWarsAPI {
+
+    private HttpClient client;
+
+    public StarWarsAPIImpl() {
+        this.client = HttpClient.newBuilder()
+            .followRedirects(HttpClient.Redirect.ALWAYS)
+            .build();
+    }
+
+    @Override
+    public StarWarsCharacterDTO getLukeSkywalker() throws IOException, InterruptedException {
+        return getStarWarsCharacter(1);
+    }
+
+    @Override
+    public StarWarsCharacterDTO getDarthVader() throws IOException, InterruptedException {
+        return getStarWarsCharacter(4);
+    }
+
+    private StarWarsCharacterDTO getStarWarsCharacter(int id) throws IOException, InterruptedException {
+        String url = "https://swapi.dev/api/people/" + id + "/";
+
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create(url))
+            .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readValue(response.body(), StarWarsCharacterDTO.class);
+    }
+}
+```
+
+Rerun the tests to make sure everything is working as expected. **The tests should pass**.
+
+## Summary
+
+You have successfully implemented a Java application that queries the Star Wars API to retrieve information about Luke Skywalker and Darth Vader. You have also created tests to verify that the application is working as expected. 🎉
+
