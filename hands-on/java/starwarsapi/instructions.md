@@ -498,5 +498,67 @@ You will see that the `StarWarsAPIImpl` class is not yet created. And that we st
 
 We will now create the `StarWarsAPIImpl` class that implements the `StarWarsAPI` interface. The class will have a method that will return a `StarWarsCharacterDTO` object. As we need to have a start we will use the Luke Skywalker example and also use a method to query specificly for Luke Skywalker.
 
+> [!IMPORTANT]
+> Create a new file called `StarWarsAPIImpl.java` in the same folder as your `App.java` file. Use VSCode to create this! 
+> The File will look like this:
 
+    ```java
+    public class StarWarsAPIImpl  {
+    
+    }
+    ```
+> Use the auto completion feature of VSCode to implement the interface. ** Move the cursor behind the class name and press space. You should see ``implements StarWarsAPI``. Press tab to accept the suggestion. **
+> The file should look like this:
+
+    ```java
+    public class StarWarsAPIImpl implements StarWarsAPI {
+    
+    }
+    ```
+    > Now we will implement the method. Just move the cursor on the class name and use the quick fix menu to implement the method. 
+    ![quickfix](./images/4.png)    
+
+### Solution
+
+Your `StarWarsAPIImpl.java` file should look like this:
+
+```java
+package com.mycompany.app;
+
+import java.io.IOException;
+
+public class StarWarsAPIImpl implements StarWarsAPI{
+
+    @Override
+    public StarWarsCharacterDTO getLukeSkywalker() throws IOException {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getLukeSkywalker'");
+    }      
+    
+}
+```
+
+Your error in the `StarWarsAPITest.java` file should be gone now. Run the tests again to make sure everything is working as expected. **The tests should fail.**
+
+## Implement the getLukeSkywalker method with http client
+
+We will now implement the `getLukeSkywalker` method in the `StarWarsAPIImpl` class. We will use the Java `HttpClient` to query the Star Wars API and retrieve the information about Luke Skywalker from the url: https://swapi.info/api/people/1
+
+> [!IMPORTANT]
+> Click in the body of the `getLukeSkywalker` method and use iterative prompting to
+> - instantiate a `HttpClient` object 
+> - create a `HttpRequest` object using the `GET` method and the url `https://swapi.info/api/people/1`
+> - send the request and retrieve the response
+> - parse the response body to a `StarWarsCharacterDTO` object
+> - return the `StarWarsCharacterDTO` object
+>
+
+> [!TIP]
+> Use the iterative prompting to implement the method. You can use the following prompts:
+
+> - `` // Use Java HttpClient to make a GET request to the Star Wars API // The URL to get Luke Skywalker is https://swapi.info/api/people/1 // Create a new instance of HttpClient ``
+> - ``// Create a new instance of HttpRequest``
+> - ``// Send the request and retrieve the response``
+> - ``// Parse the response body to a StarWarsCharacterDTO object``
+> - ``// Return the StarWarsCharacterDTO object``
 
