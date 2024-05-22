@@ -17,11 +17,10 @@ We will step by step implement a Java application to see how we can leverage Git
 - **Adding more asserts to the tests**
 - **Adding additional characters to the StarWarsAPI interface**
 
-## Quick Navigation (Table of Contents)
-
+## 📚 Quick Navigation
 - [Star Wars API with Java](#star-wars-api-with-java)
   - [🎯 Goal](#-goal)
-  - [Quick Navigation (Table of Contents)](#quick-navigation-table-of-contents)
+  - [📚 Quick Navigation](#-quick-navigation)
   - [✍️ Programming Languages](#️-programming-languages)
   - [💻 IDE](#-ide)
   - [🗒️ Guide](#️-guide)
