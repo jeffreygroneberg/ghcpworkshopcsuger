@@ -1,4 +1,4 @@
-package com.microsoft.ghcpdemo;
+package com.mycompany.app;
 
 /**
  * Hello world!
