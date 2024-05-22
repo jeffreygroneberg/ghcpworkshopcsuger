@@ -554,8 +554,7 @@ We will now implement the `getLukeSkywalker` method in the `StarWarsAPIImpl` cla
 >
 
 > [!TIP]
-> Use the iterative prompting to implement the method. You can use the following prompts:
-
+> Use the iterative prompting to implement the method. You can use the following prompts one by one to implement the method. Accept the suggestions by pressing `tab`:
 > - `` // Use Java HttpClient to make a GET request to the Star Wars API // The URL to get Luke Skywalker is https://swapi.info/api/people/1 // Create a new instance of HttpClient ``
 > - ``// Create a new instance of HttpRequest``
 > - ``// Send the request and retrieve the response``
