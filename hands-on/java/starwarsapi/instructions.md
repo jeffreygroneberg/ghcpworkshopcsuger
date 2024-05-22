@@ -9,12 +9,60 @@ We will leverage the Java programming language to query the Star Wars API at htt
 
 We will step by step implement a Java application to see how we can leverage Github Copilot to help us write the code:
 
-- Generating a DTO class for the Star Wars Person
-- Creating an interface to query the Star Wars API
-- Implementing the interface with the Java HttpClient
-- Writing tests for the interface
-- Adding more asserts to the tests
-- Adding additional characters to the StarWarsAPI interface
+- **Generating a DTO class for the Star Wars Person**
+- **Creating an interface to query the Star Wars API**
+- **Implementing the interface with the Java HttpClient**
+- **Writing tests for the interface**
+- **Adding more asserts to the tests**
+- **Adding additional characters to the StarWarsAPI interface**
+
+## Quick Navigation (Table of Contents)
+
+- [Star Wars API with Java](#star-wars-api-with-java)
+  - [🎯 Goal](#-goal)
+  - [Quick Navigation (Table of Contents)](#quick-navigation-table-of-contents)
+  - [✍️ Programming Languages](#️-programming-languages)
+  - [💻 IDE](#-ide)
+  - [🗒️ Guide](#️-guide)
+    - [Create the project](#create-the-project)
+      - [Solution](#solution)
+    - [Check if the tests compile](#check-if-the-tests-compile)
+      - [Solution](#solution-1)
+    - [Upgrade JUnit to Junit4 in your pom.xml](#upgrade-junit-to-junit4-in-your-pomxml)
+      - [Solution](#solution-2)
+    - [Refactor the tests to use Junit 4](#refactor-the-tests-to-use-junit-4)
+      - [Solution](#solution-3)
+    - [Create a Star Wars Person DTO class](#create-a-star-wars-person-dto-class)
+      - [Solution](#solution-4)
+    - [Fixing error in the StarWarsCharacterDTO class](#fixing-error-in-the-starwarscharacterdto-class)
+      - [Solution](#solution-5)
+    - [Generating Getters and Setters with VS Code](#generating-getters-and-setters-with-vs-code)
+      - [Solution](#solution-6)
+    - [Creating the interface to query the Star Wars API](#creating-the-interface-to-query-the-star-wars-api)
+      - [Solution](#solution-7)
+    - [Generate a test for the StarWarsAPI interface](#generate-a-test-for-the-starwarsapi-interface)
+      - [Solution](#solution-8)
+    - [Create the StarWarsAPIImpl class](#create-the-starwarsapiimpl-class)
+      - [Solution](#solution-9)
+    - [Implement the getLukeSkywalker method with http client](#implement-the-getlukeskywalker-method-with-http-client)
+      - [Solution](#solution-10)
+    - [Fixing the ObjectMapper error](#fixing-the-objectmapper-error)
+      - [Solution](#solution-11)
+    - [Fixing the InterruptedException error](#fixing-the-interruptedexception-error)
+      - [Solution](#solution-12)
+    - [Run the tests](#run-the-tests)
+      - [Solution](#solution-13)
+    - [Adding more Asserts to the test](#adding-more-asserts-to-the-test)
+      - [Solution](#solution-14)
+    - [Add additional characters to the StarWarsAPI interface](#add-additional-characters-to-the-starwarsapi-interface)
+      - [Solution](#solution-15)
+    - [Implement the getDarthVader method in the StarWarsAPIImpl class](#implement-the-getdarthvader-method-in-the-starwarsapiimpl-class)
+      - [Solution](#solution-16)
+    - [Add a test for the getDarthVader method](#add-a-test-for-the-getdarthvader-method)
+      - [Solution](#solution-17)
+    - [Refactor the StarWarsAPI implementation](#refactor-the-starwarsapi-implementation)
+      - [Solution](#solution-18)
+  - [Summary](#summary)
 
 ## ✍️ Programming Languages
 
@@ -57,7 +105,7 @@ Remember hat you can directly copy commands from the chat and paste them into th
 
 ![image](./images/1.png)
 
-### Solution
+#### Solution
 
 Create an empty folder and navigate to it via terminal. Then run the following command:
 
@@ -65,15 +113,15 @@ Create an empty folder and navigate to it via terminal. Then run the following c
 mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
-## Check if the tests compile
+### Check if the tests compile
 
-[!IMPORTANT]
-Ask Github Copilot to provide you with the command to compile the tests.
+> [!IMPORTANT]
+> Ask Github Copilot to provide you with the command to compile the tests.
 
-[!TIP]
-Another prompt: ``How can I use maven to run the tests?``
+> [!TIP]
+> Another prompt: ``How can I use maven to run the tests?``
 
-### Solution
+#### Solution
 
 Navigate in the folder where the project was created and run the following command:
 
@@ -92,7 +140,7 @@ You should see the following output:
 [INFO] Total time:  1.682 s
 ```
 
-## Upgrade JUnit to Junit4 in your pom.xml
+### Upgrade JUnit to Junit4 in your pom.xml
 
 > [!IMPORTANT]
 > Ask Github Copilot how you can leverage Junit 4 instead of Junit 3. Open your `pom.xml` in an editor. Use the command pop up to interact with Copilot Chat here.
@@ -101,7 +149,7 @@ You should see the following output:
 > [!TIP]
 > Prompt: ``I would like to use Junit 4. What do I have to alter?``
 
-### Solution
+#### Solution
 
 Your `pom.xml` dependencies should look like this:
 
@@ -116,7 +164,7 @@ Your `pom.xml` dependencies should look like this:
   </dependencies>
 ```
 
-## Refactor the tests to use Junit 4
+### Refactor the tests to use Junit 4
 
 > [!IMPORTANT]
 > Ask Github Copilot to provide you with the necessary imports to use Junit 4 in your tests. Open your `AppTest.java` file in an editor and use Copilot Chat with an appropriate prompt to refactor the class.
@@ -124,7 +172,7 @@ Your `pom.xml` dependencies should look like this:
 > [!TIP]
 > Prompt: ``I would like to refactor the tests to use Junit 4 and one basic test. Can you help me with the imports and the overall class structure?``
 
-### Solution
+#### Solution
 
 Your `AppTest.java` file should look like this. Be careful with the package name, **it should match the one you used when creating the project**.
 
@@ -170,7 +218,7 @@ public class AppTest
 }
 ```
 
-## Create a Star Wars Person DTO class
+### Create a Star Wars Person DTO class
 
 Please navigate in your browser to the [Star Wars API](https://swapi.info/) and get familiar with the API. We will create a DTO class to represent a Star Wars Person.
 Let's start by using Luke Skywalker as an example: https://swapi.info/people/1
@@ -228,7 +276,7 @@ You can see the example payload directly at the page. Please copy the JSON in yo
 > Remember that you can directly create files out of copilot chat by clicking on the file icon.
 > ![image](./images/2.png)
 
-### Solution
+#### Solution
 
 Your DTO class should look like this:
 
@@ -260,7 +308,7 @@ public class StarWarsCharacterDTO {
 
 Remember that this file needs to be stored in the same folder like your `App.java` file. **The file needs to have the same filename as the class name** (eg `StarWarsCharacterDTO.java` in this example!).
 
-## Fixing error in the StarWarsCharacterDTO class
+### Fixing error in the StarWarsCharacterDTO class
 
 Your DTO class seems to have an error as something is underlined in red. Please ask Github Copilot to help you fix the error.
 
@@ -273,7 +321,7 @@ Your DTO class seems to have an error as something is underlined in red. Please 
 >
 > Accept the suggestion of Github Copilot.
 
-### Solution
+#### Solution
 
 The error should be fixed now. And the `StarWarsCharacterDTO.java` file looks like this:
 
@@ -305,11 +353,11 @@ public class StarWarsCharacterDTO {
 }
 ```
 
-## Generating Getters and Setters with VS Code
+### Generating Getters and Setters with VS Code
 
 You can use the VS Code feature to generate getters and setters for the fields in the `StarWarsCharacterDTO` class. Click in the class and press ``CMD + .`` to open the quick fix menu. Then select the option to generate getters and setters.
 
-### Solution
+#### Solution
 
 Your `StarWarsCharacterDTO.java` file should look like this:
 
@@ -437,7 +485,7 @@ public class StarWarsCharacterDTO {
 
 ```
 
-## Creating the interface to query the Star Wars API
+### Creating the interface to query the Star Wars API
 
 We will create an interface that will be used to query the Star Wars API. The interface will have a method that will return a `StarWarsCharacterDTO` object. As we need to have a start we will use the Luke Skywalker example and also use a method to query specificly for Luke Skywalker.
 
@@ -447,7 +495,7 @@ We will create an interface that will be used to query the Star Wars API. The in
 > [!TIP]
 > Prompt: ``Can you help me create a plain java interface that queries the Star Wars API and returns a StarWarsCharacterDTO object? I would like to start with just one method for querying Luke Skywalker. The interface should be called StarWarsAPI.``
 
-### Solution
+#### Solution
 
 Your `StarWarsAPI.java` file should look like this and been stored in the same folder like your `App.java` and `StarWarsCharacterDTO.java` file:
 
@@ -461,7 +509,7 @@ public interface StarWarsAPI {
 }
 ```
 
-## Generate a test for the StarWarsAPI interface
+### Generate a test for the StarWarsAPI interface
 
 We will now create a test for the `StarWarsAPI` interface. The test will be used to verify that the interface is working as expected. We will use Junit 4 to create the test.
 
@@ -472,7 +520,7 @@ We will now create a test for the `StarWarsAPI` interface. The test will be used
 > Use the Github Copilot popup to create the test. Leverage the ``/tests`` command to let Copilot generate the test for you. An example prompt could be: ``/tests Create a test that is checking if the retrieved object from the Star Wars API is fine.`` Accept the suggestion of Copilot and store the file next to your `AppTest.java` file as ``StarWarsAPITest.java`` file.
 > Careful: Most likely you will have to adjust the package name in the generated test file and import the IOException. You can use the quick fix menu to do so with Github Copilot.
 
-### Solution
+#### Solution
 
 Your `StarWarsAPITest.java` file should look like this:
 
@@ -501,7 +549,7 @@ public class StarWarsAPITest {
 
 You will see that the `StarWarsAPIImpl` class is not yet created. And that we still have compilation errors. We will fix this in the next steps.
 
-## Create the StarWarsAPIImpl class
+### Create the StarWarsAPIImpl class
 
 We will now create the `StarWarsAPIImpl` class that implements the `StarWarsAPI` interface. The class will have a method that will return a `StarWarsCharacterDTO` object. As we need to have a start we will use the Luke Skywalker example and also use a method to query specificly for Luke Skywalker.
 
@@ -514,6 +562,7 @@ public class StarWarsAPIImpl  {
 
 }
 ```
+
 > Use the auto completion feature of VSCode to implement the interface. ** Move the cursor behind the class name and press space. You should see ``implements StarWarsAPI``. Press tab to accept the suggestion. **
 > The file should look like this:
 
@@ -522,9 +571,11 @@ public class StarWarsAPIImpl implements StarWarsAPI {
 
 }
 ```
-> Now we will implement the method. Just move the cursor on the class name and use the quick fix menu to implement the method. 
-![quickfix](./images/4.png)  
-### Solution
+
+> Now we will implement the method. Just move the cursor on the class name and use the quick fix menu to implement the method.
+> ![quickfix](./images/4.png)
+
+#### Solution
 
 Your `StarWarsAPIImpl.java` file should look like this:
 
@@ -539,13 +590,14 @@ public class StarWarsAPIImpl implements StarWarsAPI{
     public StarWarsCharacterDTO getLukeSkywalker() throws IOException {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getLukeSkywalker'");
-    }    
+    }  
   
 }
 ```
+
 Your error in the `StarWarsAPITest.java` file should be gone now. Run the tests again to make sure everything is working as expected. **The tests should fail.**
 
-## Implement the getLukeSkywalker method with http client
+### Implement the getLukeSkywalker method with http client
 
 We will now implement the `getLukeSkywalker` method in the `StarWarsAPIImpl` class. We will use the Java `HttpClient` to query the Star Wars API and retrieve the information about Luke Skywalker from the url: https://swapi.info/api/people/1
 
@@ -567,7 +619,7 @@ We will now implement the `getLukeSkywalker` method in the `StarWarsAPIImpl` cla
 > - ``// Parse the response body to a StarWarsCharacterDTO object``
 > - ``// Return the StarWarsCharacterDTO object``
 
-### Solution
+#### Solution
 
 Your `StarWarsAPIImpl.java` file should look like this:
 
@@ -584,7 +636,7 @@ public class StarWarsAPIImpl implements StarWarsAPI{
 
     @Override
     public StarWarsCharacterDTO getLukeSkywalker() throws IOException {
-     
+   
         // Use Java HttpClient to make a GET request to the Star Wars API
         // The URL to get Luke Skywalker is https://swapi.info/api/people/1
         // Create a new instance of HttpClient
@@ -603,15 +655,16 @@ public class StarWarsAPIImpl implements StarWarsAPI{
         StarWarsCharacterDTO lukeSkywalker = mapper.readValue(response.body(), StarWarsCharacterDTO.class);
 
         return lukeSkywalker;
-      
+    
 
-    }    
+    }  
   
 }
 ```
+
 You will see that there is an **error** with the `ObjectMapper` class. We will fix this in the next steps.
 
-## Fixing the ObjectMapper error
+### Fixing the ObjectMapper error
 
 The `ObjectMapper` class is not yet imported. But even then we need to add the `jackson-databind` dependency to the `pom.xml` file. Use the Github Copilot to help with this.
 
@@ -626,7 +679,7 @@ The `ObjectMapper` class is not yet imported. But even then we need to add the `
 > - Ask Github Copilot Chat to provide you with the necessary dependency for the `pom.xml` file. A prompt could be: ``I need to add the jackson-databind dependency to the pom.xml file. Can you help me with this?``
 >   A popup from the Java Extension Pack will appear. Accept the suggestion to rebuild the Java Class Path.
 
-### Solution
+#### Solution
 
 Your `StarWarsAPIImpl.java` file should look like this:
 
@@ -644,7 +697,7 @@ public class StarWarsAPIImpl implements StarWarsAPI{
 
     @Override
     public StarWarsCharacterDTO getLukeSkywalker() throws IOException {
-     
+   
         // Use Java HttpClient to make a GET request to the Star Wars API
         // The URL to get Luke Skywalker is https://swapi.info/api/people/1
 
@@ -664,12 +717,13 @@ public class StarWarsAPIImpl implements StarWarsAPI{
         StarWarsCharacterDTO lukeSkywalker = mapper.readValue(response.body(), StarWarsCharacterDTO.class);
 
         return lukeSkywalker;
-      
+    
 
-    }    
+    }  
   
 }
 ```
+
 Your `pom.xml` file should look like this:
 
 ```xml
@@ -699,9 +753,10 @@ Your `pom.xml` file should look like this:
   </dependencies>
 </project>
 ```
+
 Nevertheless there is now a new error in the `StarWarsAPIImpl.java` file. We will fix this in the next steps.
 
-## Fixing the InterruptedException error
+### Fixing the InterruptedException error
 
 The `getLukeSkywalker` method throws an `IOException`. But the `HttpClient` class also throws an `InterruptedException`. We will fix this by adding the `InterruptedException` to the `throws` clause of the method. This also means that we need to add the `InterruptedException` to the `throws` clause of the `getLukeSkywalker` method in the `StarWarsAPI` interface. And afterwards to the **try/catch** block in the `StarWarsAPITest.java` file.
 
@@ -713,7 +768,7 @@ The `getLukeSkywalker` method throws an `IOException`. But the `HttpClient` clas
 > Use the Quick Fix menu (`CMD+.`) to add the `InterruptedException` to the `try/catch` block in the `StarWarsAPITest.java` file.
 > ![image](images/7.png)
 
-### Solution
+#### Solution
 
 Your `StarWarsAPIImpl.java` file should look like this:
 
@@ -731,7 +786,7 @@ public class StarWarsAPIImpl implements StarWarsAPI{
 
     @Override
     public StarWarsCharacterDTO getLukeSkywalker() throws IOException, InterruptedException {
-     
+   
         // Use Java HttpClient to make a GET request to the Star Wars API
         // The URL to get Luke Skywalker is https://swapi.info/api/people/1
 
@@ -751,12 +806,13 @@ public class StarWarsAPIImpl implements StarWarsAPI{
         StarWarsCharacterDTO lukeSkywalker = mapper.readValue(response.body(), StarWarsCharacterDTO.class);
 
         return lukeSkywalker;
-      
+    
 
-    }    
+    }  
   
 }
 ```
+
 Your `StarWarsAPI.java` file should look like this:
 
 ```java
@@ -770,6 +826,7 @@ public interface StarWarsAPI {
 
 }
 ```
+
 Your `StarWarsAPITest.java` file should look like this:
 
 ```java
@@ -796,7 +853,8 @@ public class StarWarsAPITest {
 }
 
 ```
-## Run the tests
+
+### Run the tests
 
 Run the tests again to make sure everything is working as expected. **The tests will now fail** with
 
@@ -805,6 +863,7 @@ Run the tests again to make sure everything is working as expected. **The tests 
 [ERROR]    StarWarsAPITest.testGetLukeSkywalker:20 IOException occurred: No content to map due to end-of-input
  at [Source: (String)""; line: 1, column: 0]
 ```
+
 > [!IMPORTANT]
 >
 > - Ask Github Copilot to provide you with the necessary code to fix the error. The hint might be not enough.
@@ -816,7 +875,7 @@ Run the tests again to make sure everything is working as expected. **The tests 
 > - Replace the instance of the `HttpClient` with the following code: ``HttpClient client = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.ALWAYS).build();``
 > - Rerun the tests to make sure everything is working as expected: ``mvn test``
 
-### Solution
+#### Solution
 
 Your `StarWarsAPIImpl.java` file should look like this:
 
@@ -834,7 +893,7 @@ public class StarWarsAPIImpl implements StarWarsAPI{
 
     @Override
     public StarWarsCharacterDTO getLukeSkywalker() throws IOException, InterruptedException {
-     
+   
         // Use Java HttpClient to make a GET request to the Star Wars API
         // The URL to get Luke Skywalker is https://swapi.info/api/people/1
 
@@ -856,13 +915,14 @@ public class StarWarsAPIImpl implements StarWarsAPI{
         StarWarsCharacterDTO lukeSkywalker = mapper.readValue(response.body(), StarWarsCharacterDTO.class);
 
         return lukeSkywalker;
-      
+    
 
-    }    
+    }  
   
 }
 ```
-## Adding more Asserts to the test
+
+### Adding more Asserts to the test
 
 We need to add a little more asserts to the test to check if the information about Luke Skywalker is correct. We will check if the name of Luke Skywalker is correct and if the height is correct.
 
@@ -877,7 +937,7 @@ We need to add a little more asserts to the test to check if the information abo
 > - - ``// Check if the name of Luke Skywalker is correct``
 > - - ``// Check if the height of Luke Skywalker is correct``
 
-### Solution
+#### Solution
 
 Your `StarWarsAPITest.java` file should look like this:
 
@@ -912,9 +972,9 @@ public class StarWarsAPITest {
 }
 ```
 
-## Add additional characters to the StarWarsAPI interface
+### Add additional characters to the StarWarsAPI interface
 
-Now that we have implemented the `getLukeSkywalker` method we will add additional methods to the `StarWarsAPI` interface to query other Star Wars characters. We will now query for our beloved Darth Vader. 
+Now that we have implemented the `getLukeSkywalker` method we will add additional methods to the `StarWarsAPI` interface to query other Star Wars characters. We will now query for our beloved Darth Vader.
 
 > [!IMPORTANT]
 > Add a new method to the `StarWarsAPI` interface that will return a `StarWarsCharacterDTO` object for Darth Vader. Use a comment as a prompt to do so
@@ -922,7 +982,7 @@ Now that we have implemented the `getLukeSkywalker` method we will add additiona
 > [!TIP]
 > Use the following prompt as a comment to ask Github Copilot to provide you with the necessary code. Press enter after the comment and Tab to accept the suggestion: ``// Get Darth Vader``
 
-### Solution
+#### Solution
 
 Your `StarWarsAPI.java` file should look like this:
 
@@ -942,7 +1002,7 @@ public interface StarWarsAPI {
 
 This will lead to a compile error in the StarWarsAPIImpl class. We will fix this in the next steps.
 
-## Implement the getDarthVader method in the StarWarsAPIImpl class
+### Implement the getDarthVader method in the StarWarsAPIImpl class
 
 We will now implement the `getDarthVader` method in the `StarWarsAPIImpl` class. We will use the Java `HttpClient` to query the Star Wars API and retrieve the information about Darth Vader from the url: https://swapi.info/api/people/4
 
@@ -953,7 +1013,7 @@ We will now implement the `getDarthVader` method in the `StarWarsAPIImpl` class.
 > Use the following prompt as a comment to ask Github Copilot to provide you with the necessary code. Press enter after the comment and Tab to accept the suggestion: ``// Implement the getDarthVader method``
 > You might need multiple tabs to accept all suggestions.
 
-### Solution
+#### Solution
 
 Your `StarWarsAPIImpl.java` file should look like this:
 
@@ -971,7 +1031,7 @@ public class StarWarsAPIImpl implements StarWarsAPI{
 
     @Override
     public StarWarsCharacterDTO getLukeSkywalker() throws IOException, InterruptedException {
-       
+     
         // Use Java HttpClient to make a GET request to the Star Wars API
         // The URL to get Luke Skywalker is https://swapi.info/api/people/1
 
@@ -993,14 +1053,14 @@ public class StarWarsAPIImpl implements StarWarsAPI{
         StarWarsCharacterDTO lukeSkywalker = mapper.readValue(response.body(), StarWarsCharacterDTO.class);
 
         return lukeSkywalker;
-        
+      
 
     }
-    
+  
     // Implement the getDarthVader method
     @Override
     public StarWarsCharacterDTO getDarthVader() throws IOException, InterruptedException {
-       
+     
         // Use Java HttpClient to make a GET request to the Star Wars API
         // The URL to get Darth Vader is https://swapi.info/api/people/4
 
@@ -1021,15 +1081,15 @@ public class StarWarsAPIImpl implements StarWarsAPI{
         ObjectMapper mapper = new ObjectMapper();
         StarWarsCharacterDTO darthVader = mapper.readValue(response.body(), StarWarsCharacterDTO.class);
 
-        return darthVader;        
+        return darthVader;      
 
-    }    
+    }  
 }
 ```
 
 Rerun the tests to see if it is still working. Next we will add a test for the `getDarthVader` method.
 
-## Add a test for the getDarthVader method
+### Add a test for the getDarthVader method
 
 We will now add a test for the `getDarthVader` method in the `StarWarsAPITest` class. The test will be used to verify that the `getDarthVader` method is working as expected.
 
@@ -1037,12 +1097,12 @@ We will now add a test for the `getDarthVader` method in the `StarWarsAPITest` c
 > Add a new test method to the `StarWarsAPITest` class that will test the `getDarthVader` method. Use a comment as a prompt to do so.
 
 > [!TIP]
+>
 > - Open the `StarWarsAPITest.java` file. Use a comment as a prompt after the `testGetLukeSkywalker` method to ask Github Copilot to provide you with the necessary code to implement the `testGetDarthVader` method: ``// Test the getDarthVader method``
 > - Use multiple tabs to accept all suggestions.
 > - Rerun the tests to make sure everything is working as expected: ``mvn test``
->
 
-### Solution
+#### Solution
 
 Your `StarWarsAPITest.java` file should look like this:
 
@@ -1099,7 +1159,7 @@ public class StarWarsAPITest {
 
 ```
 
-## Refactor the StarWarsAPI implementation
+### Refactor the StarWarsAPI implementation
 
 There is a lot of duplicated code in the `getLukeSkywalker` and `getDarthVader` methods. We will refactor the code to extract the common code into a new private method called `getStarWarsCharacter` and leverage Github Copilot to help us with this.
 
@@ -1107,11 +1167,12 @@ There is a lot of duplicated code in the `getLukeSkywalker` and `getDarthVader` 
 > Use the Github Copilot chat to help you refactor the `getLukeSkywalker` and `getDarthVader` methods in the `StarWarsAPIImpl` class. The common code should be extracted into a new private method called `getStarWarsCharacter`. The method should only receive an id as a parameter and return a `StarWarsCharacterDTO` object.
 
 > [!TIP]
+>
 > - Open your `StarWarsAPIImpl.java` file.
 > - Use Github Copilot chat to help you refactor the `getLukeSkywalker` and `getDarthVader` methods. Use the following prompt: ``Can you help me refactoring this class to use a private method getStarWarsCharacter to retrieve the payloads and avoid duplicated code in the different methods. I want to provide an Id to the private method. I need the whole refactored class as a result including the getLukeSkywalker and getDarthVaeder methods.``
 > - Careful. The retrieved class is missing the package declaration. **Add the package declaration to the class**
 
-### Solution
+#### Solution
 
 Your `StarWarsAPIImpl.java` file should look like this:
 
@@ -1165,4 +1226,3 @@ Rerun the tests to make sure everything is working as expected. **The tests shou
 ## Summary
 
 You have successfully implemented a Java application that queries the Star Wars API to retrieve information about Luke Skywalker and Darth Vader. You have also created tests to verify that the application is working as expected. 🎉
-
