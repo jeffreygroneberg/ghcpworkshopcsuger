@@ -9,9 +9,7 @@ We will leverage the Java programming language to query the Star Wars API at htt
 
 <!-- ONE SENTENCE ABOUT THE GOAL OF THE EXERCISE -->
 
-
 ## ✍️ Programming Languages
-
 
 - Java
 
@@ -30,7 +28,7 @@ We will leverage the Java programming language to query the Star Wars API at htt
 <!-- STEP BY STEP ISNTRUCTIONS DETAILING HOW TO COMPLETE THE EXERCISE -->
 
 Within the next steps we will create a Java application that will query the Star Wars API and retrieve information about the Star Wars characters.
-We will leverage Github Copilot to help us write the code and get started. 
+We will leverage Github Copilot to help us write the code and get started.
 
 ### Create the project
 
@@ -55,9 +53,11 @@ Remember hat you can directly copy commands from the chat and paste them into th
 ### Solution
 
 Create an empty folder and navigate to it via terminal. Then run the following command:
+
 ```bash
 mvn archetype:generate -DgroupId=com.starwars -DartifactId=starwars -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
+
 ## Check if the tests compile
 
 [!IMPORTANT]
@@ -73,24 +73,26 @@ Navigate in the folder where the project was created and run the following comma
 ```bash
 mvn test
 ```
+
 You should see the following output:
-    
-    ```bash
-    [INFO]
-    [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
-    [INFO] ------------------------------------------------------------------------
-    [INFO] BUILD SUCCESS
-    [INFO] ------------------------------------------------------------------------
-    [INFO] Total time:  1.682 s
-    ```
+
+```bash
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.682 s
+```
+
 ## Upgrade JUnit to Junit4 in your pom.xml
 
-[!IMPORTANT]
-Ask Github Copilot how you can leverage Junit 4 instead of Junit 3. Open your `pom.xml` in an editor. Use the command pop up to interact with Copilot Chat here. 
-After you have altered the `pom.xml` file, run the tests again to make sure everything is working as expected.
+> [!IMPORTANT]
+> Ask Github Copilot how you can leverage Junit 4 instead of Junit 3. Open your `pom.xml` in an editor. Use the command pop up to interact with Copilot Chat here.
+> After you have altered the `pom.xml` file, run the tests again to make sure everything is working as expected.
 
-[!TIP]
-Prompt: ``I would like to use Junit 4. What do I have to alter?``
+> [!TIP]
+> Prompt: ``I would like to use Junit 4. What do I have to alter?``
 
 ### Solution
 
@@ -109,11 +111,11 @@ Your `pom.xml` dependencies should look like this:
 
 ## Refactor the tests to use Junit 4
 
-[!IMPORTANT]
-Ask Github Copilot to provide you with the necessary imports to use Junit 4 in your tests. Open your `AppTest.java` file in an editor and use Copilot Chat with an appropriate prompt to refactor the class.
+> [!IMPORTANT]
+> Ask Github Copilot to provide you with the necessary imports to use Junit 4 in your tests. Open your `AppTest.java` file in an editor and use Copilot Chat with an appropriate prompt to refactor the class.
 
-[!TIP]
-Prompt: ``I would like to refactor the tests to use Junit 4 and one basic test. Can you help me with the imports and the overall class structure?``
+> [!TIP]
+> Prompt: ``I would like to refactor the tests to use Junit 4 and one basic test. Can you help me with the imports and the overall class structure?``
 
 ### Solution
 
