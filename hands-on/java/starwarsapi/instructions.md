@@ -7,7 +7,14 @@ We will leverage the Java programming language to query the Star Wars API at htt
 
 ## 🎯 Goal
 
-<!-- ONE SENTENCE ABOUT THE GOAL OF THE EXERCISE -->
+We will step by step implement a Java application to see how we can leverage Github Copilot to help us write the code:
+
+- Generating a DTO class for the Star Wars Person
+- Creating an interface to query the Star Wars API
+- Implementing the interface with the Java HttpClient
+- Writing tests for the interface
+- Adding more asserts to the tests
+- Adding additional characters to the StarWarsAPI interface
 
 ## ✍️ Programming Languages
 
