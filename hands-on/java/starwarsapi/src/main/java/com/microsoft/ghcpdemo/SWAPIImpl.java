@@ -28,6 +28,8 @@ public class SWAPIImpl implements SWAPI {
         // send the request and parse the response into a Person object
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         ObjectMapper mapper = new ObjectMapper();
+        System.out.println(response.body());
+
         Person person = mapper.readValue(response.body(), Person.class);
         return person;
 

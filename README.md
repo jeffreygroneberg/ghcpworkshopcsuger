@@ -1,6 +1,8 @@
 # ghcpworkshopcsuger
 
-A repository that can be used to showcase the capabilities within a 2 hours and 4 hours workshop
+A repository that can be used to showcase the capabilities within a 2 hours and 4 hours workshop. In addition to this we also provide a The [Train the Trainer guide](TrainTheTrainer.md) that can be used in conjunction with the hands-on labs to provide a full workshop experience and a good understanding of the capabilities of GitHub Copilot and how to structure a workshop around it.
+
+
 
 ## Overview of the workshop
 
