@@ -37,11 +37,10 @@ This checklist is designed to guide the workshop, ensuring that all critical top
   - [ ] Multi-language support.
   - [ ] Integration with other tools.
   - [ ] Live demo.
-  - [ ] Provide reference to [Advanced Features Guide](https://docs.github.com/en/copilot/advanced-features).
 
 - [ ] **Break (10 min)**
 
-- [ ] **Hands-on Session 2: Advanced Usage (30 min)**
+- [ ] **Hands-on Session 2: Advanced Usage (60 min)**
   - [ ] Practical exercises on advanced usage:
     - [ ] Refactoring.
     - [ ] Generating complex code.
@@ -51,25 +50,8 @@ This checklist is designed to guide the workshop, ensuring that all critical top
 - [ ] **Best Practices and Limitations (20 min)**
   - [ ] Discuss best practices for using GitHub Copilot.
   - [ ] Understanding its limitations.
-  - [ ] Review case studies.
-  - [ ] Provide reference to [Best Practices Guide](https://docs.github.com/en/copilot/best-practices).
 
 - [ ] **Break (10 min)**
-
-- [ ] **Teaching Techniques (20 min)**
-  - [ ] Strategies for teaching GitHub Copilot:
-    - [ ] Engaging learners.
-    - [ ] Addressing common questions.
-    - [ ] Effective demonstrations.
-  - [ ] Provide reference to [Teaching Strategies](https://teaching.github.com/).
-
-- [ ] **Creating Training Materials (20 min)**
-  - [ ] Guidance on creating effective training materials:
-    - [ ] Slides.
-    - [ ] Handouts.
-    - [ ] Guides.
-  - [ ] Provide templates and examples.
-  - [ ] Provide reference to [Training Materials Templates](https://training.github.com/materials/).
 
 - [ ] **Q&A and Workshop Feedback (30 min)**
   - [ ] Open Q&A session.
