@@ -16,9 +16,10 @@ The image gallery should look and behave like the following example:
 - HTML
 - CSS
 
-## 💻 IDE
+## 💻 IDE and tools
 <!-- OPTIONALLY SPECIFY THE IDE THAT SHOULD BE USED -->
 - Visual Studio Code
+- [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 ## 🗒️ Guide
 <!-- STEP BY STEP ISNTRUCTIONS DETAILING HOW TO COMPLETE THE EXERCISE -->
