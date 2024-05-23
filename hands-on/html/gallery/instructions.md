@@ -544,5 +544,135 @@ In this step, you will reduce the opacity of the non-hovered images.
 
 Refresh your browser to see the opacity effect on the non-hovered images in the gallery. Hover with your mouse over the different images to see the opacity effect.
 
+## Removing elements from the gallery
+
+In this step, you will remove one image from the gallery when you click on it. Be careful with the events of the DOM elements. Some elements might not be available when the page is loaded.
+
+> [!Important]
+> Use Github Copilot chat to generate the JavaScript code for removing an image from the gallery when you click on it. Remember to have the index.html file open in the editor.
+
+> [!Tip]
+> - You can use the following prompt in the chat: ``I would like to remove an element from the image gallery when clicking on it. Can you return the whole html page with the new added javascript?``
+> - Copy over the generated JavaScript code to your html file.
+> - Ask Copilot chat why a script tag can be placed in the body tag: ``Why is it better in this case to place the script tag at the end of the body tag?``
+>
+
+### Solution
+
+```html
+<!-- very basic structure of a modern html page with head body etc -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First HTML Page</title>
+    <style>
+      /* Gallery grid layout */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: 600px;
+        position: relative;
+      }
+
+      /* Image styles */
+      .gallery img {
+        width: 200px;
+        height: 200px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border: 15px solid white;
+        border-radius: 5px;
+        transition: opacity 0.5s, transform 0.5s;
+      }
+
+      /* Image hover styles */
+      .gallery img:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        animation: rotate 2s infinite;
+        opacity: 1 !important;
+      }
+
+      /* Gallery hover styles */
+      .gallery:hover img {
+        opacity: 0.6;
+      }
+
+      .fade-out {
+        opacity: 0;
+        transition: opacity 3s ease-out;
+      }
+
+      /* Image rotation animation */
+      @keyframes rotate {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(5deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- image gallery using random images from the unsplash page. For further styling already add appropriate classes. All images should have the same width and height -->
+    <div class="gallery">
+      <img
+        src="https://source.unsplash.com/random/200x200"
+        alt="Random Image 1"
+      />
+      <img
+        src="https://source.unsplash.com/random/200x200"
+        alt="Random Image 2"
+      />
+      <img
+        src="https://source.unsplash.com/random/200x200"
+        alt="Random Image 3"
+      />
+      <img
+        src="https://source.unsplash.com/random/200x200"
+        alt="Random Image 4"
+      />
+      <img
+        src="https://source.unsplash.com/random/200x200"
+        alt="Random Image 5"
+      />
+      <img
+        src="https://source.unsplash.com/random/200x200"
+        alt="Random Image 6"
+      />
+      <img
+        src="https://source.unsplash.com/random/200x200"
+        alt="Random Image 7"
+      />
+      <img
+        src="https://source.unsplash.com/random/200x200"
+        alt="Random Image 8"
+      />
+      <img
+        src="https://source.unsplash.com/random/200x200"
+        alt="Random Image 9"
+      />
+    </div>
+
+    <script>
+      // Select all images in the gallery
+      var images = document.querySelectorAll(".gallery img");
+
+      // Add an event listener to each image
+      images.forEach(function (image) {
+        image.addEventListener("click", function (e) {
+          // Remove the image when it's clicked
+          e.target.remove();
+        });
+      });
+    </script>
+  </body>
+</html>
+```
+
 ## Summary
 
