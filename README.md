@@ -18,10 +18,10 @@ A repository that can be used to showcase the capabilities within a 2 hours and 
 | **Polaroid Image Gallery** | HTML/Javascript | Building a small image gallery with animations using Javascript and CSS  | 45 mins | [Instructions](hands-on/html/gallery/instructions.md)| 
 | **Star Wars API Client**   | Java            | Creating from the official page of Star Wars API a library that can be used to retrieve persons of the Star Wars franchise.<br /><br /> We create DTOs, Tests, Interfaces and let Copilot implement it. Furthermore we will use the HTML source of the spec to enhance our examples with all the persons that are available | 1 hour  | [Instructions](hands-on/java/starwarsapi/instructions.md)
 | **Restaurant API + Deployment** | Python/Azure | Creating a simple API and deploying it to Azure Container Apps | 45mins | [Instructions](https://github.com/devndive/coding-with-gh-copilot/blob/main/README.md)
-| **C Sharp Web App** | C# | GitHub Copilot repository for the Business Hackathon with .NET Web Technologies (C# ASP.NET / Blazor and Unittests) | 1 hour | [Instructions](https://github.com/Blubern/GCH-CSharpAspUnitTest) | [QR](images/CSharpApsUnit.png)
-| **Timer and Selector** | HTML, CSS, React | We are building a website for trainers that have some components that can be used for workshops. These include: a timer for a coffee / lunch break and a selector for selecting a participant. | 30mins | [Instructions](https://github.com/Blubern/GCH-WebDevJavaScript) | [QR](images/WebDevReact.png)
-| **Interest Calculator** | C++ | Building a interest calculator together with a unittest | 30mins | [Instructions](https://github.com/Blubern/GCH-CPlusPlus) | [QR](images/CPlusPlus.png)
-| **API Testing with SWAPI** | C# | Implementing some tests to test an API | 30mins | [Instructions](https://github.com/tobiaswittenburg/SWAPITest) | [QR](images/qr_apitesting.png)
+| **C Sharp Web App** | C# | GitHub Copilot repository for the Business Hackathon with .NET Web Technologies (C# ASP.NET / Blazor and Unittests) | 1 hour | [Instructions](https://github.com/Blubern/GCH-CSharpAspUnitTest) | [QR](images/qr/CSharpApsUnit.png)
+| **Timer and Selector** | HTML, CSS, React | We are building a website for trainers that have some components that can be used for workshops. These include: a timer for a coffee / lunch break and a selector for selecting a participant. | 30mins | [Instructions](https://github.com/Blubern/GCH-WebDevJavaScript) | [QR](images/qr/WebDevReact.png)
+| **Interest Calculator** | C++ | Building a interest calculator together with a unittest | 30mins | [Instructions](https://github.com/Blubern/GCH-CPlusPlus) | [QR](images/qr/CPlusPlus.png)
+| **API Testing with SWAPI** | C# | Implementing some tests to test an API | 30mins | [Instructions](https://github.com/tobiaswittenburg/SWAPITest) | [QR](images/qr/qr_apitesting.png)
 
 
 
