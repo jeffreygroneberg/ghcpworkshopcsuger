@@ -67,14 +67,14 @@ You can have a look at your html file in the browser by right clicking on the fi
 
 ## Adding images to the gallery
 
-In this step, you will add images to the gallery. The galleries should be random images using the `unsplash` API. As we know that we will need further styling add a class to it.
+In this step, you will add images to the gallery. The galleries should be random images using the `picsum` API. As we know that we will need further styling add a class to it.
 
 > [!Important]
-> Add nine images to the gallery using the `unsplash` API for random images. Use a comment as a prompt in your html file to add images to the gallery.
+> Add nine images to the gallery using the `picsum` API for random images. Use a comment as a prompt in your html file to add images to the gallery.
 
 
 > [!Tip]
-> - You can use the following comment in your html file to add images to the gallery: `` <!-- image gallery using random images from the unsplash page. For further styling already add appropriate classes. All images should have the same width and height -->``
+> - You can use the following comment in your html file to add images to the gallery: `` <!-- image gallery using random images from the picsum page. For further styling already add appropriate classes. All images should have the same width and height -->``
 > - Remember to close the `div` tag after adding all the images.
 
 ### Solution
@@ -89,45 +89,19 @@ In this step, you will add images to the gallery. The galleries should be random
   <body>
     <h1>Hello World!</h1>
     <p>This is my first HTML page.</p>
-    <!-- image gallery using random images from the unsplash page. For further styling already add appropriate classes. All images should have the same width and height -->
-    <div class="gallery">
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 1"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 2"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 3"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 4"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 5"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 6"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 7"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 8"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 9"
-      />
-    </div>
+    <!-- image gallery using random images from the picsum page. For further styling already add appropriate classes. All images should have the same width and height -->
+    	<div class="gallery">
+		<img src="https://picsum.photos/200/200" alt="image 1">
+		<img src="https://picsum.photos/200/200" alt="image 2">
+		<img src="https://picsum.photos/200/200" alt="image 3">
+		<img src="https://picsum.photos/200/200" alt="image 4">
+		<img src="https://picsum.photos/200/200" alt="image 5">
+		<img src="https://picsum.photos/200/200" alt="image 6">
+		<img src="https://picsum.photos/200/200" alt="image 7">
+		<img src="https://picsum.photos/200/200" alt="image 8">
+		<img src="https://picsum.photos/200/200" alt="image 9">
+		<img src="https://picsum.photos/200/200" alt="image 10">
+	</div>
   </body>
 </html>
 ```
@@ -173,45 +147,19 @@ In this step, you will add a polaroid effect to the images.
   <body>
     <h1>Hello World!</h1>
     <p>This is my first HTML page.</p>
-    <!-- image gallery using random images from the unsplash page. For further styling already add appropriate classes. All images should have the same width and height -->
-    <div class="gallery">
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 1"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 2"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 3"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 4"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 5"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 6"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 7"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 8"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 9"
-      />
-    </div>
+    <!-- image gallery using random images from the picsum page. For further styling already add appropriate classes. All images should have the same width and height -->
+    	<div class="gallery">
+		<img src="https://picsum.photos/200/200" alt="image 1">
+		<img src="https://picsum.photos/200/200" alt="image 2">
+		<img src="https://picsum.photos/200/200" alt="image 3">
+		<img src="https://picsum.photos/200/200" alt="image 4">
+		<img src="https://picsum.photos/200/200" alt="image 5">
+		<img src="https://picsum.photos/200/200" alt="image 6">
+		<img src="https://picsum.photos/200/200" alt="image 7">
+		<img src="https://picsum.photos/200/200" alt="image 8">
+		<img src="https://picsum.photos/200/200" alt="image 9">
+		<img src="https://picsum.photos/200/200" alt="image 10">
+	</div>
   </body>
 </html>
 ```
@@ -268,45 +216,19 @@ In this step, you will align the images in a 3x3 grid. It is important that the 
   <body>
     <h1>Hello World!</h1>
     <p>This is my first HTML page.</p>
-    <!-- image gallery using random images from the unsplash page. For further styling already add appropriate classes. All images should have the same width and height -->
-    <div class="gallery">
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 1"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 2"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 3"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 4"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 5"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 6"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 7"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 8"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 9"
-      />
-    </div>
+    <!-- image gallery using random images from the picsum page. For further styling already add appropriate classes. All images should have the same width and height -->
+    	<div class="gallery">
+		<img src="https://picsum.photos/200/200" alt="image 1">
+		<img src="https://picsum.photos/200/200" alt="image 2">
+		<img src="https://picsum.photos/200/200" alt="image 3">
+		<img src="https://picsum.photos/200/200" alt="image 4">
+		<img src="https://picsum.photos/200/200" alt="image 5">
+		<img src="https://picsum.photos/200/200" alt="image 6">
+		<img src="https://picsum.photos/200/200" alt="image 7">
+		<img src="https://picsum.photos/200/200" alt="image 8">
+		<img src="https://picsum.photos/200/200" alt="image 9">
+		<img src="https://picsum.photos/200/200" alt="image 10">
+	</div>
   </body>
 </html>
 ```
@@ -382,45 +304,19 @@ In this step, you will add animations to the images. The images should wobble wh
   <body>
     <h1>Hello World!</h1>
     <p>This is my first HTML page.</p>
-    <!-- image gallery using random images from the unsplash page. For further styling already add appropriate classes. All images should have the same width and height -->
-    <div class="gallery">
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 1"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 2"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 3"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 4"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 5"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 6"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 7"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 8"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 9"
-      />
-    </div>
+    <!-- image gallery using random images from the picsum page. For further styling already add appropriate classes. All images should have the same width and height -->
+    	<div class="gallery">
+		<img src="https://picsum.photos/200/200" alt="image 1">
+		<img src="https://picsum.photos/200/200" alt="image 2">
+		<img src="https://picsum.photos/200/200" alt="image 3">
+		<img src="https://picsum.photos/200/200" alt="image 4">
+		<img src="https://picsum.photos/200/200" alt="image 5">
+		<img src="https://picsum.photos/200/200" alt="image 6">
+		<img src="https://picsum.photos/200/200" alt="image 7">
+		<img src="https://picsum.photos/200/200" alt="image 8">
+		<img src="https://picsum.photos/200/200" alt="image 9">
+		<img src="https://picsum.photos/200/200" alt="image 10">
+	</div>
   </body>
 </html>
 ```
@@ -500,45 +396,19 @@ In this step, you will reduce the opacity of the non-hovered images.
   <body>
     <h1>Hello World!</h1>
     <p>This is my first HTML page.</p>
-    <!-- image gallery using random images from the unsplash page. For further styling already add appropriate classes. All images should have the same width and height -->
-    <div class="gallery">
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 1"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 2"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 3"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 4"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 5"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 6"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 7"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 8"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 9"
-      />
-    </div>
+    <!-- image gallery using random images from the picsum page. For further styling already add appropriate classes. All images should have the same width and height -->
+    	<div class="gallery">
+		<img src="https://picsum.photos/200/200" alt="image 1">
+		<img src="https://picsum.photos/200/200" alt="image 2">
+		<img src="https://picsum.photos/200/200" alt="image 3">
+		<img src="https://picsum.photos/200/200" alt="image 4">
+		<img src="https://picsum.photos/200/200" alt="image 5">
+		<img src="https://picsum.photos/200/200" alt="image 6">
+		<img src="https://picsum.photos/200/200" alt="image 7">
+		<img src="https://picsum.photos/200/200" alt="image 8">
+		<img src="https://picsum.photos/200/200" alt="image 9">
+		<img src="https://picsum.photos/200/200" alt="image 10">
+	</div>
   </body>
 </html>
 ```
@@ -619,45 +489,19 @@ In this step, you will remove one image from the gallery when you click on it. B
     </style>
   </head>
   <body>
-    <!-- image gallery using random images from the unsplash page. For further styling already add appropriate classes. All images should have the same width and height -->
-    <div class="gallery">
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 1"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 2"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 3"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 4"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 5"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 6"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 7"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 8"
-      />
-      <img
-        src="https://source.unsplash.com/random/200x200"
-        alt="Random Image 9"
-      />
-    </div>
+    <!-- image gallery using random images from the picsum page. For further styling already add appropriate classes. All images should have the same width and height -->
+    	<div class="gallery">
+		<img src="https://picsum.photos/200/200" alt="image 1">
+		<img src="https://picsum.photos/200/200" alt="image 2">
+		<img src="https://picsum.photos/200/200" alt="image 3">
+		<img src="https://picsum.photos/200/200" alt="image 4">
+		<img src="https://picsum.photos/200/200" alt="image 5">
+		<img src="https://picsum.photos/200/200" alt="image 6">
+		<img src="https://picsum.photos/200/200" alt="image 7">
+		<img src="https://picsum.photos/200/200" alt="image 8">
+		<img src="https://picsum.photos/200/200" alt="image 9">
+		<img src="https://picsum.photos/200/200" alt="image 10">
+	</div>
 
     <script>
       // Select all images in the gallery
