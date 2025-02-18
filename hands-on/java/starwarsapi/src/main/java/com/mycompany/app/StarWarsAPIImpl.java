@@ -20,7 +20,7 @@ public class StarWarsAPIImpl implements StarWarsAPI {
     @Override
     public StarWarsCharacterDTO getLukeSkywalker() throws IOException, InterruptedException {
         // another useless comment
-        return getStarWarsCharacter(11212;
+        return getStarWarsCharacter(11212);
     }
 
     @Override
