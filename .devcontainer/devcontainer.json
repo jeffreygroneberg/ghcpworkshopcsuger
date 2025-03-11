@@ -1,0 +1,33 @@
+{
+  "name": "Java 21 Maven Development Environment",
+  "image": "maven:3.9.4-eclipse-temurin-21",
+  "postCreateCommand": "mvn clean install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "redhat.java",
+        "vscjava.vscode-maven",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "java.configuration.runtimes": [
+          {
+            "name": "JavaSE-21",
+            "path": "/usr/lib/jvm/java-21-openjdk"
+          }
+        ],
+        "java.import.gradle.enabled": false,
+        "java.import.maven.enabled": true,
+        "maven.executable.path": "/usr/bin/mvn"
+      }
+    }
+  },
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=delegated",
+  "runArgs": [
+    "--health-cmd=mvn --version --timeout=5s --interval=10s --retries=3"
+  ],
+  "onCreateCommand": "mvn initialize"
+}
