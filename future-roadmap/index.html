@@ -1,0 +1,1304 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive workshop for learning GitHub Copilot capabilities">
+      
+      
+        <meta name="author" content="GitHub Copilot Workshop Team">
+      
+      
+      
+        <link rel="prev" href="../hands-on/other-labs/">
+      
+      
+        <link rel="next" href="../rag-extension-lab/">
+      
+      
+      <link rel="icon" href="../assets/images/custom/github-copilot-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>Future Roadmap - GitHub Copilot Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#future-roadmap-of-github-copilot" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GitHub Copilot Workshop" class="md-header__button md-logo" aria-label="GitHub Copilot Workshop" data-md-component="logo">
+      
+  <img src="../assets/images/custom/github-copilot-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GitHub Copilot Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Future Roadmap
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jeffreygroneberg/ghcpworkshopcsuger" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jeffreygroneberg/ghcpworkshopcsuger
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../workshop-overview/" class="md-tabs__link">
+        
+  
+    
+  
+  Workshop Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../train-the-trainer/" class="md-tabs__link">
+        
+  
+    
+  
+  Train the Trainer
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../model-comparison/" class="md-tabs__link">
+        
+  
+    
+  
+  Model Comparison
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../hands-on/" class="md-tabs__link">
+          
+  
+    
+  
+  Hands-on Labs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Future Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../rag-extension-lab/" class="md-tabs__link">
+        
+  
+    
+  
+  RAG Extension Lab
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GitHub Copilot Workshop" class="md-nav__button md-logo" aria-label="GitHub Copilot Workshop" data-md-component="logo">
+      
+  <img src="../assets/images/custom/github-copilot-logo.png" alt="logo">
+
+    </a>
+    GitHub Copilot Workshop
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jeffreygroneberg/ghcpworkshopcsuger" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jeffreygroneberg/ghcpworkshopcsuger
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Workshop Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../train-the-trainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Train the Trainer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Comparison
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../hands-on/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Hands-on Labs
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hands-on Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hands-on/html-gallery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTML Image Gallery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hands-on/starwars-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Star Wars API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hands-on/other-labs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Other Labs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Future Roadmap
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Future Roadmap
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#current-state-of-github-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current State of GitHub Copilot 📊
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#near-term-roadmap-6-12-months" class="md-nav__link">
+    <span class="md-ellipsis">
+      Near-Term Roadmap (6-12 Months) 🔮
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Near-Term Roadmap (6-12 Months) 🔮">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhanced-context-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhanced Context Understanding 🧠
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-collaboration-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Collaboration Features 👥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expanded-language-and-framework-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expanded Language and Framework Support 🌐
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medium-term-roadmap-1-2-years" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medium-Term Roadmap (1-2 Years) 🌱
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Medium-Term Roadmap (1-2 Years) 🌱">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai-driven-architecture-assistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI-Driven Architecture Assistance 🏗️
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-testing-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Testing Capabilities 🧪
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-and-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security and Compliance 🔒
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-term-vision-2-years" class="md-nav__link">
+    <span class="md-ellipsis">
+      Long-Term Vision (2+ Years) 🔭
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Long-Term Vision (2+ Years) 🔭">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autonomous-code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autonomous Code Generation 🤖
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#natural-language-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Language Programming 💬
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-platform-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-Platform Intelligence 📱
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethical-considerations-and-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ethical Considerations and Challenges 🤔
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ethical Considerations and Challenges 🤔">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ethical-ai-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ethical AI Development 🌟
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Challenges 🧩
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#industry-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Industry Impact 🌍
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-stay-updated" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Stay Updated 📡
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-for-the-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparing for the Future 🌈
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag-extension-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RAG Extension Lab
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#current-state-of-github-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current State of GitHub Copilot 📊
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#near-term-roadmap-6-12-months" class="md-nav__link">
+    <span class="md-ellipsis">
+      Near-Term Roadmap (6-12 Months) 🔮
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Near-Term Roadmap (6-12 Months) 🔮">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhanced-context-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhanced Context Understanding 🧠
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-collaboration-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Collaboration Features 👥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expanded-language-and-framework-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expanded Language and Framework Support 🌐
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medium-term-roadmap-1-2-years" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medium-Term Roadmap (1-2 Years) 🌱
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Medium-Term Roadmap (1-2 Years) 🌱">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai-driven-architecture-assistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI-Driven Architecture Assistance 🏗️
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-testing-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Testing Capabilities 🧪
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-and-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security and Compliance 🔒
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-term-vision-2-years" class="md-nav__link">
+    <span class="md-ellipsis">
+      Long-Term Vision (2+ Years) 🔭
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Long-Term Vision (2+ Years) 🔭">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autonomous-code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autonomous Code Generation 🤖
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#natural-language-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Language Programming 💬
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-platform-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-Platform Intelligence 📱
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethical-considerations-and-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ethical Considerations and Challenges 🤔
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ethical Considerations and Challenges 🤔">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ethical-ai-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ethical AI Development 🌟
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Challenges 🧩
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#industry-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Industry Impact 🌍
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-stay-updated" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Stay Updated 📡
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-for-the-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparing for the Future 🌈
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="future-roadmap-of-github-copilot">Future Roadmap of GitHub Copilot 🚀<a class="headerlink" href="#future-roadmap-of-github-copilot" title="Permanent link">&para;</a></h1>
+<p>GitHub Copilot is continuously evolving, with new features and capabilities being added regularly. This chapter explores the exciting future roadmap of GitHub Copilot and what developers can expect in the coming months and years.</p>
+<h2 id="current-state-of-github-copilot">Current State of GitHub Copilot 📊<a class="headerlink" href="#current-state-of-github-copilot" title="Permanent link">&para;</a></h2>
+<p>Before diving into the future, let's briefly recap where GitHub Copilot stands today:</p>
+<ul>
+<li><strong>Code Completion</strong>: Suggests code as you type, completing lines or entire functions</li>
+<li><strong>Natural Language Understanding</strong>: Converts comments into functional code</li>
+<li><strong>Multi-Language Support</strong>: Works across numerous programming languages</li>
+<li><strong>IDE Integration</strong>: Available in popular editors like VS Code, Visual Studio, JetBrains IDEs, and more</li>
+<li><strong>GitHub Copilot Chat</strong>: Provides conversational AI assistance for coding questions</li>
+<li><strong>Context Awareness</strong>: Understands your project's context to provide relevant suggestions</li>
+</ul>
+<h2 id="near-term-roadmap-6-12-months">Near-Term Roadmap (6-12 Months) 🔮<a class="headerlink" href="#near-term-roadmap-6-12-months" title="Permanent link">&para;</a></h2>
+<h3 id="enhanced-context-understanding">Enhanced Context Understanding 🧠<a class="headerlink" href="#enhanced-context-understanding" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Improved Repository-Wide Context</strong>: Better understanding of your entire codebase, not just the current file</li>
+<li><strong>Semantic Code Analysis</strong>: Deeper understanding of code meaning and intent</li>
+<li><strong>Cross-File Refactoring</strong>: Suggest changes across multiple files to improve code quality</li>
+</ul>
+<h3 id="advanced-collaboration-features">Advanced Collaboration Features 👥<a class="headerlink" href="#advanced-collaboration-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Team-Based Learning</strong>: Copilot will learn from your team's coding patterns and preferences</li>
+<li><strong>Code Review Assistance</strong>: Automated suggestions for code reviews</li>
+<li><strong>Collaborative Coding</strong>: Real-time AI assistance during pair programming sessions</li>
+</ul>
+<h3 id="expanded-language-and-framework-support">Expanded Language and Framework Support 🌐<a class="headerlink" href="#expanded-language-and-framework-support" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Specialized Framework Knowledge</strong>: Deeper understanding of popular frameworks</li>
+<li><strong>Domain-Specific Suggestions</strong>: Tailored recommendations for specific industries or domains</li>
+<li><strong>New Language Support</strong>: Expanding to cover more programming languages and technologies</li>
+</ul>
+<h2 id="medium-term-roadmap-1-2-years">Medium-Term Roadmap (1-2 Years) 🌱<a class="headerlink" href="#medium-term-roadmap-1-2-years" title="Permanent link">&para;</a></h2>
+<h3 id="ai-driven-architecture-assistance">AI-Driven Architecture Assistance 🏗️<a class="headerlink" href="#ai-driven-architecture-assistance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>System Design Suggestions</strong>: Help with designing software architecture</li>
+<li><strong>Pattern Recognition</strong>: Identify and suggest architectural patterns</li>
+<li><strong>Performance Optimization</strong>: Recommendations for improving code efficiency</li>
+</ul>
+<h3 id="advanced-testing-capabilities">Advanced Testing Capabilities 🧪<a class="headerlink" href="#advanced-testing-capabilities" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Test Generation</strong>: Automatically generate comprehensive test suites</li>
+<li><strong>Edge Case Detection</strong>: Identify potential edge cases in your code</li>
+<li><strong>Test Coverage Analysis</strong>: Suggest tests to improve coverage</li>
+</ul>
+<h3 id="security-and-compliance">Security and Compliance 🔒<a class="headerlink" href="#security-and-compliance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Security Vulnerability Detection</strong>: Identify potential security issues in real-time</li>
+<li><strong>Compliance Checking</strong>: Ensure code meets industry standards and regulations</li>
+<li><strong>Best Practice Enforcement</strong>: Suggestions to align with security best practices</li>
+</ul>
+<h2 id="long-term-vision-2-years">Long-Term Vision (2+ Years) 🔭<a class="headerlink" href="#long-term-vision-2-years" title="Permanent link">&para;</a></h2>
+<h3 id="autonomous-code-generation">Autonomous Code Generation 🤖<a class="headerlink" href="#autonomous-code-generation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Full Feature Implementation</strong>: Generate entire features from high-level descriptions</li>
+<li><strong>Self-Improving Code</strong>: Suggestions that evolve based on runtime performance</li>
+<li><strong>Autonomous Debugging</strong>: Identify and fix bugs with minimal human intervention</li>
+</ul>
+<h3 id="natural-language-programming">Natural Language Programming 💬<a class="headerlink" href="#natural-language-programming" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Conversational Development</strong>: Build software through natural conversations</li>
+<li><strong>Requirements to Code</strong>: Transform business requirements directly into working code</li>
+<li><strong>Documentation Generation</strong>: Create comprehensive documentation from code</li>
+</ul>
+<h3 id="cross-platform-intelligence">Cross-Platform Intelligence 📱<a class="headerlink" href="#cross-platform-intelligence" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Multi-Platform Optimization</strong>: Suggestions optimized for various platforms and devices</li>
+<li><strong>Adaptive UI Generation</strong>: Create user interfaces that adapt to different devices</li>
+<li><strong>Cross-Platform Testing</strong>: Ensure code works consistently across platforms</li>
+</ul>
+<h2 id="ethical-considerations-and-challenges">Ethical Considerations and Challenges 🤔<a class="headerlink" href="#ethical-considerations-and-challenges" title="Permanent link">&para;</a></h2>
+<p>As GitHub Copilot evolves, several important considerations will shape its development:</p>
+<h3 id="ethical-ai-development">Ethical AI Development 🌟<a class="headerlink" href="#ethical-ai-development" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Bias Mitigation</strong>: Ongoing efforts to reduce bias in code suggestions</li>
+<li><strong>Transparency</strong>: Clear communication about how suggestions are generated</li>
+<li><strong>User Control</strong>: Ensuring developers maintain control over their code</li>
+</ul>
+<h3 id="technical-challenges">Technical Challenges 🧩<a class="headerlink" href="#technical-challenges" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Computational Efficiency</strong>: Balancing suggestion quality with performance</li>
+<li><strong>Context Window Limitations</strong>: Expanding the amount of code Copilot can consider</li>
+<li><strong>Integration Complexity</strong>: Seamless integration with diverse development environments</li>
+</ul>
+<h3 id="industry-impact">Industry Impact 🌍<a class="headerlink" href="#industry-impact" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Developer Productivity</strong>: Measuring and maximizing productivity gains</li>
+<li><strong>Skill Development</strong>: Ensuring Copilot enhances rather than replaces developer skills</li>
+<li><strong>Economic Effects</strong>: Understanding the broader impact on the software industry</li>
+</ul>
+<h2 id="how-to-stay-updated">How to Stay Updated 📡<a class="headerlink" href="#how-to-stay-updated" title="Permanent link">&para;</a></h2>
+<p>To keep up with GitHub Copilot's evolving capabilities:</p>
+<ol>
+<li><strong>GitHub Blog</strong>: Follow the <a href="https://github.blog/">GitHub Blog</a> for official announcements</li>
+<li><strong>Release Notes</strong>: Check Copilot's release notes in your IDE</li>
+<li><strong>GitHub Changelog</strong>: Review the <a href="https://github.blog/changelog/">GitHub Changelog</a> for updates</li>
+<li><strong>GitHub Next</strong>: Explore <a href="https://githubnext.com/">GitHub Next</a> for experimental features</li>
+<li><strong>Community Forums</strong>: Participate in GitHub Copilot discussions</li>
+</ol>
+<h2 id="preparing-for-the-future">Preparing for the Future 🌈<a class="headerlink" href="#preparing-for-the-future" title="Permanent link">&para;</a></h2>
+<p>As GitHub Copilot continues to evolve, developers can prepare by:</p>
+<ul>
+<li><strong>Embracing AI Collaboration</strong>: View AI as a collaborative partner rather than a replacement</li>
+<li><strong>Focusing on High-Level Skills</strong>: Develop skills in architecture, design, and problem-solving</li>
+<li><strong>Providing Quality Feedback</strong>: Help improve Copilot by providing feedback on suggestions</li>
+<li><strong>Staying Adaptable</strong>: Be ready to incorporate new AI capabilities into your workflow</li>
+<li><strong>Ethical Consideration</strong>: Think critically about how and when to use AI-generated code</li>
+</ul>
+<p>The future of GitHub Copilot promises to transform how we write code, making development more accessible, efficient, and creative. By understanding the roadmap and preparing for these changes, developers can make the most of this powerful AI assistant! 🚀</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jeffreygroneberg/ghcpworkshopcsuger" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
