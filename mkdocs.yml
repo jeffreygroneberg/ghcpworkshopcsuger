@@ -1,0 +1,87 @@
+site_name: GitHub Copilot Workshop
+site_description: A comprehensive workshop for learning GitHub Copilot capabilities
+site_author: GitHub Copilot Workshop Team
+repo_url: https://github.com/jeffreygroneberg/ghcpworkshopcsuger
+repo_name: jeffreygroneberg/ghcpworkshopcsuger
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+  favicon: assets/images/custom/github-copilot-logo.png
+  logo: assets/images/custom/github-copilot-logo.png
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jeffreygroneberg/ghcpworkshopcsuger
+
+nav:
+  - Home: index.md
+  - Workshop Overview: workshop-overview.md
+  - Train the Trainer: train-the-trainer.md
+  - Model Comparison: model-comparison.md
+  - Hands-on Labs:
+    - Overview: hands-on/index.md
+    - HTML Image Gallery: hands-on/html-gallery.md
+    - Star Wars API: hands-on/starwars-api.md
+    - Other Labs: hands-on/other-labs.md
+  - Future Roadmap: future-roadmap.md
+  - RAG Extension Lab: rag-extension-lab.md
